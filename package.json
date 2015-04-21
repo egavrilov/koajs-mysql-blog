@@ -1,0 +1,15 @@
+{
+  "name": "koajs-mysql-weblog",
+  "version": "0.0.0",
+  "description": "Simple blog example on koa.js and mysql",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "co": "^4.5.2",
+    "koa": "^0.19.1"
+  }
+}
