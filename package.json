@@ -11,6 +11,8 @@
   "dependencies": {
     "co": "^4.5.2",
     "koa": "^0.19.1",
+    "koa-helmet": "^0.1.0",
+    "koa-router": "^5.1.1",
     "mysql2": "^0.15.5"
   }
 }
