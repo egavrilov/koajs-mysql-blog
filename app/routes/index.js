@@ -4,18 +4,17 @@
  */
 
 var routesList = {
-  'get /': 'homepage'
+  'get /': 'homepage.index'
 };
 
 
 
 function loadFrom(path) {
   var cb = require('./' + path.split('.').join('/'));
-  return function* (next) {
+  return function* () {
     typeof cb === 'function' ?
-      cb.bind(this) :
-      this.status = '500';
-    yield next;
+      cb.call(this) :
+      this.status = 500;
   }
 }
 
