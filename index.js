@@ -1,11 +1,18 @@
 var koa = require('koa');
 var helmet = require('koa-helmet');
 var router = require('koa-router')();
+var views = require('koa-views');
 
 var app = module.exports = koa();
 var db = require('./app/core/getConnection')();
 var api = require('./app/api');
 var routes = require('./app/routes');
+
+// template middleware
+
+app.use( views('app/views', {
+  'default': 'jade'
+}));
 
 // logger
 app.use(function *(next) {

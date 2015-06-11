@@ -14,7 +14,7 @@ function loadFrom(path) {
   var cb = require('./' + path.split('.').join('/'));
   return function* () {
     typeof cb === 'function' ?
-      cb.call(this) :
+      yield cb.call(this) :
       this.status = 500;
   }
 }

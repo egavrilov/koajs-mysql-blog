@@ -1,3 +1,4 @@
-module.exports = function() {
-  this.body = '404';
+module.exports = function*() {
+  this.status = 404;
+  yield this.render('service/404', {});
 };
