@@ -1,10 +1,11 @@
 /**
  * Add route here
- * @type {{method url: string}}
+ * @type Object {'method /route/:param': 'path.to.route'}
  */
 
 var routesList = {
-  'get /': 'homepage.index'
+  'get /': 'homepage',
+  'get /404': 'service.404'
 };
 
 
@@ -18,7 +19,7 @@ function loadFrom(path) {
   }
 }
 
-module.exports = Object.keys(routesList).reduce(function(hash, route) {
+module.exports = Object.keys(routesList).reduce( (hash, route) => {
   hash[route] = loadFrom(routesList[route]);
   return hash;
 }, {});
