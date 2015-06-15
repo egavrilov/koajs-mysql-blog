@@ -9,9 +9,13 @@ var api = require('./app/api');
 var routes = require('./app/routes');
 
 // template middleware
-
-app.use( views('app/views', {
+app.use( views('./views', {
   'default': 'jade'
+}));
+
+// static
+app.use(require('koa-static')(__dirname + '/static', {
+  defer: true
 }));
 
 // logger
@@ -37,7 +41,6 @@ app.use(function *(next) {
 //setTimeout(function() {
 //  db.query('select * from post', console.log);
 //},1000);
-//
 
 // response
 

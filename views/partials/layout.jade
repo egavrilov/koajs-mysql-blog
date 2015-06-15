@@ -1,0 +1,21 @@
+doctype html
+html
+  head
+    block styles
+      link(rel='text/stylesheet', href='/styles')
+    block title
+      title Awesome website
+  body
+    header
+      block header
+        h1 Awesome website
+    .aside
+      block sidebar
+        include ./sidebar
+    .content
+      block content
+
+    footer.footer
+      block footer
+
+    block scripts
